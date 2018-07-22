@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 import React from "react";
-import "./button_sub.css";
 
-const ButtonSub = ({name,onClick})=>(<button>{name}</button>);
+const ButtonSub = ({name, onClick})=>(<button onClick = {onClick}>{name}</button>);
 export default ButtonSub;

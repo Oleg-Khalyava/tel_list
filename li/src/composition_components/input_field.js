@@ -8,37 +8,44 @@
 import React from "react";
 import SelectGroup from "./select_group";
 export default class InputField extends React.Component {
-        constructor ({object,changeValue, state}){
-            super ({object,changeValue, state});
+        constructor ({object,changeValue, state, objectErrors}){
+            super ({object,changeValue, state, objectErrors});
         }
     render (){return (
                 <div>
-                <label for = "name">Имя</label>
+                
+                <label>Имя:
                 <input 
                 id ="name" 
                 type="text" 
                 placeholder = "имя" 
                 autocomplete="off" 
+                data-rule ="length, a"
                 value = {this.props.object.name} 
                 onChange = {this.props.changeValue}/>
-                <label for = "tel">Номер тел:</label>
+                </label>
+                <label>Номер тел:
                 <input 
                 id ="tel" 
                 type="tel" 
                 placeholder = "тел." 
-                autocomplete="off"
+                autocomplete="off" 
+                data-rule ="length"
                 value = {this.props.object.tel} 
                 onChange = {this.props.changeValue}
                 />
-                <label for = "e-mail">E-mail</label>
+                </label>
+                <label>E-mail:
                 <input 
-                id ="e-mail" 
+                id ="email" 
                 type="email" 
                 placeholder = "e-mail" 
                 autocomplete="on"
+                data-rule ="length"
                 value = {this.props.object.email} 
                 onChange = {this.props.changeValue}
                 />
+                </label>
                 <SelectGroup onChange = {this.props.changeValue} state = {this.props.state}/>
                 </div>
                      )

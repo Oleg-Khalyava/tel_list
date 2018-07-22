@@ -6,11 +6,11 @@
 import React from "react";
 
 const ContactLi = ({index,name,tel,email,group})=>(<li>
-                                                         <span>{index +1}</span> 
-                                                         <span>{name}</span> 
-                                                         <span>{tel}</span>
-                                                         <span>{email}</span>
-                                                         <span>{group}</span>
+                                                         <span id ="index_s">{index}</span> 
+                                                         <span id="name_s">{name}</span> 
+                                                         <span id="tel_s">{tel}</span>
+                                                         <span id = "email_s">{email}</span>
+                                                         <span id="group_s">{group}</span>
                                                     </li>);
 
 export default ContactLi;

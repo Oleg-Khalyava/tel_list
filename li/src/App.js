@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import FormInputContact from "./composition_components/form_input_contact";
 import ContactUl from "./composition_components/сontact_ul";
+import {validForm} from "./script/valid_form";
+import "./app.css";
+
 
 class App extends Component {
   constructor () {
@@ -11,7 +14,7 @@ class App extends Component {
                                     email: "",
                                     group: ""
                                 }
-      
+               
                    };
        this.changeValue = this.changeValue.bind(this);
        this.pushPersons = this.pushPersons.bind(this);
@@ -28,7 +31,7 @@ class App extends Component {
                   newObject.objectContact.tel = target.value;
                   break;
           }   
-          case "e-mail":{
+          case "email":{
                   newObject.objectContact.email = target.value;
                   break;
           }
@@ -39,8 +42,7 @@ class App extends Component {
           default:break 
       };
       this.setState(newObject);
-  };
-  
+  };  
   pushPersons (event) {
       event.preventDefault();
       let pushObject = Object.assign({},this.state.objectContact);
@@ -52,17 +54,18 @@ class App extends Component {
       newObject.arrContacts.push(pushObject);
       this.setState (newObject);  
   };
+
   render (){return ( <div>
                      <FormInputContact 
-                                    
+                                    id ="field-input"
                                     object = { this.state.objectContact}
                                     changeValue ={(event)=>{this.changeValue(event)}}
                                     pushPersons = {(event)=>{this.pushPersons(event)}}
                                     state ={this.state}
                      />
                      <ContactUl persons = {this.state.arrContacts}/>
-                     </div>              
-                                  );
+                     </div>     
+                  );
                 };
   componentDidMount (){
                         let newObjectContact = Object.assign({},this.state.objectContact, {group: document.getElementById("select").value});
@@ -73,10 +76,4 @@ class App extends Component {
   };
 
                       };
-                  
-
-  
-  
-  
-
 export default App;

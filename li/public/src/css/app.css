@@ -4,10 +4,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 13.07.2018, 18:54:43
+    Created on : 20.07.2018, 19:00:23
     Author     : hp
 */
-button {
-    height: 40px;
-    border-radius: 10px
+#root div form h1 {
+  font: 30px bold;
 }
+/*# sourceMappingURL=app.css.map */

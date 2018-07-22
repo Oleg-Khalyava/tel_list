@@ -8,9 +8,10 @@ import ContactLi from "./contact_li";
 
 
 const ContactUl = ({persons}) =>(
-        <ul>{persons.map ( (item, index)=>(<ContactLi 
+        <ul> <ContactLi index = "№" name = "Имя" tel = "Номер тел." email = "E-mail" group = "Группа"/>
+            {                              persons.map ( (item, index)=>(<ContactLi 
                                             key = {index}
-                                            index = {index} 
+                                            index = {index+1} 
                                             name = {item.name} 
                                             tel = {item.tel}
                                             email = {item.email} 

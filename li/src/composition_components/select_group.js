@@ -7,6 +7,7 @@
 import React from "react";
 export default class SelectGroup extends React.Component {
     render (){return (
+                
                 <label>Выберите группу:
                 <select 
                 id ="select" 
@@ -17,7 +18,7 @@ export default class SelectGroup extends React.Component {
                 <option>семья</option>
                 </select>
                 </label>
-     
+                
                      )
              };
 };
